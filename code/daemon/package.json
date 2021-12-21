@@ -1,0 +1,25 @@
+{
+  "name": "daemon_docker_web_app",
+  "version": "1.0.0",
+  "description": "node.js on docker",
+  "author": "Vlad",
+  "scripts": {
+    "dev": "nodemon -L src/server.ts"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.10.0",
+    "@types/express": "4.17.6",
+    "@types/node": "14.0.13",
+    "@types/node-fetch": "2.5",
+    "@types/js-yaml": "^4.0.0",
+    "ts-node": "8.10.2",
+    "typescript": "3.9.5",
+    "nodemon": ""
+  },
+  "dependencies": {
+    "express": "4.16.1",
+    "js-yaml": "^4.0.0",
+    "form-data": "4.0.0",
+    "node-fetch": "^2.6.6"
+  }
+}

@@ -1,0 +1,103 @@
+version: "3.9"
+
+# Определяем запускаемые контейнеры
+services:
+  # первый экземпляр (имя может быть любым, по нему происходит обращение к хосту в виртуальной сети, см. peers.yaml
+  webjs0:
+    # Задаём переменные среды. ID-идентификатор узла. PYTHONUNBUFFERED позволяет видеть вывод от print
+    environment:
+      - ID=0
+    # Указываем образ (в данном случае говорим его собрать из текущей директории)
+    build: ./app
+    # Связываем порт 8000 компьютера (127.0.0.1) и порт 8000 контейнера (именно в этом порядке)
+    ports:
+      - "8080:8080"
+    volumes:
+      # для nodemon
+      - ./app/src:/app/src
+      # папка для контента общая и находится на хосте
+      - ./app/uploads:/app/uploads
+  webjs1:
+    # Задаём переменные среды. ID-идентификатор узла. PYTHONUNBUFFERED позволяет видеть вывод от print
+    environment:
+      - ID=1
+    # Указываем образ (в данном случае говорим его собрать из текущей директории)
+    build: ./app
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./app/src:/app/src
+      - ./app/uploads:/app/uploads
+  webjs2:
+    # Задаём переменные среды. ID-идентификатор узла. PYTHONUNBUFFERED позволяет видеть вывод от print
+    environment:
+      - ID=2
+    # Указываем образ (в данном случае говорим его собрать из текущей директории)
+    build: ./app
+    ports:
+      - "8082:8080"
+    volumes:
+      - ./app/src:/app/src
+      - ./app/uploads:/app/uploads
+  webjs3:
+    # Задаём переменные среды. ID-идентификатор узла. PYTHONUNBUFFERED позволяет видеть вывод от print
+    environment:
+      - ID=3
+    # Указываем образ (в данном случае говорим его собрать из текущей директории)
+    build: ./app
+    ports:
+      - "8083:8080"
+    volumes:
+      - ./app/src:/app/src
+      - ./app/uploads:/app/uploads
+  webjs4:
+    # Задаём переменные среды. ID-идентификатор узла. PYTHONUNBUFFERED позволяет видеть вывод от print
+    environment:
+      - ID=4
+    # Указываем образ (в данном случае говорим его собрать из текущей директории)
+    build: ./app
+    ports:
+      - "8084:8080"
+    volumes:
+      - ./app/src:/app/src
+      - ./app/uploads:/app/uploads
+  webjs5:
+    # Задаём переменные среды. ID-идентификатор узла. PYTHONUNBUFFERED позволяет видеть вывод от print
+    environment:
+      - ID=5
+    # Указываем образ (в данном случае говорим его собрать из текущей директории)
+    build: ./app
+    ports:
+      - "8085:8080"
+    volumes:
+      - ./app/src:/app/src
+      - ./app/uploads:/app/uploads
+  webjs6:
+    # Задаём переменные среды. ID-идентификатор узла. PYTHONUNBUFFERED позволяет видеть вывод от print
+    environment:
+      - ID=6
+    # Указываем образ (в данном случае говорим его собрать из текущей директории)
+    build: ./app
+    ports:
+      - "8086:8080"
+    volumes:
+      - ./app/src:/app/src
+      - ./app/uploads:/app/uploads
+  webjs7:
+    # Задаём переменные среды. ID-идентификатор узла. PYTHONUNBUFFERED позволяет видеть вывод от print
+    environment:
+      - ID=7
+    # Указываем образ (в данном случае говорим его собрать из текущей директории)
+    build: ./app
+    ports:
+      - "8087:8080"
+    volumes:
+      - ./app/src:/app/src
+      - ./app/uploads:/app/uploads
+  daemonjs:
+    # Указываем образ (в данном случае говорим его собрать из текущей директории)
+    build: ./daemon
+    ports:
+      - "8079:8079"
+    volumes:
+      - ./daemon/src:/app/src
