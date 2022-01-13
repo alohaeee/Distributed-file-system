@@ -5,4 +5,4 @@ System has 4 variants of connection between nodes:
 - REST
 - RPC
 - Kafka
-- RabbitMq
+- RabbitMQ
