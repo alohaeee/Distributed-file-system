@@ -1,5 +1,6 @@
 # Distributed-file-system
-Distributed file system with docker and nodejs for educational purpose with 4 types of connection between nodes:
+Simple distributed file system with docker and nodejs for educational purpose.
+System has 4 variants of connection between nodes:
 - REST
 - RPC
 - Kafka
